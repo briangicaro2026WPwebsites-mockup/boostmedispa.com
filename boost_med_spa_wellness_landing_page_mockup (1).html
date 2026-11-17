@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boost Med Spa &amp; Wellness | Daxxify, Botox &amp; Aesthetic Injectables in Lone Tree, CO</title>
+  <meta name="description" content="Personalized aesthetic &amp; wellness treatments in Lone Tree, CO led by Shannon Asuchak, RN (19 years injecting experience). Featuring Daxxify, Botox, Dysport, Xeomin &amp; Jeuveau with transparent pricing." />
+
+  <!-- Google Fonts: Cormorant Garamond (Luxury Editorial Serif) & Plus Jakarta Sans (Clean Clinical Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Design Tokens Matching boostmedispa.com -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF7F4',
+            sand: '#F3ECE4',
+            blush: '#EFE5DC',
+            espresso: {
+              800: '#2E2825',
+              900: '#26211E',
+              950: '#1C1816',
+            },
+            taupe: '#635852',
+            champagne: {
+              50: '#FBF7F2',
+              100: '#F5ECE0',
+              200: '#EBD9C3',
+              400: '#CCA982',
+              500: '#B8936A',
+              600: '#9E7B54',
+            },
+            roseblush: {
+              100: '#F4E8E4',
+              200: '#E8D5CE',
+              400: '#C99A8E',
+              500: '#B58174',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            soft: '0 14px 36px -12px rgba(38, 33, 30, 0.08)',
+            card: '0 6px 24px -4px rgba(38, 33, 30, 0.05)',
+            glow: '0 10px 30px -6px rgba(184, 147, 106, 0.28)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom CSS Architecture: Keyframes, Reveal Choreography, Hairline Borders & Micro-Interactions -->
+  <style>
+    :root {
+      --bg-ivory: #FAF7F4;
+      --bg-sand: #F3ECE4;
+      --bg-blush: #EFE5DC;
+      --ink-espresso: #26211E;
+      --ink-deep: #1C1816;
+      --ink-taupe: #635852;
+      --accent-champagne: #B8936A;
+      --accent-champagne-hover: #9E7B54;
+      --accent-rose: #C99A8E;
+      --accent-rose-soft: #E8D5CE;
+      --hairline-gold: rgba(184, 147, 106, 0.22);
+      --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    body {
+      background-color: var(--bg-ivory);
+      color: var(--ink-espresso);
+      overflow-x: hidden;
+    }
+
+    /* Warm Hairline Luxury Cards */
+    .luxury-card {
+      background-color: #FFFFFF;
+      border: 1px solid var(--hairline-gold);
+      transition: transform 0.45s var(--ease-luxury), box-shadow 0.45s var(--ease-luxury), border-color 0.35s ease;
+    }
+
+    .luxury-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px -12px rgba(38, 33, 30, 0.11);
+      border-color: rgba(184, 147, 106, 0.5);
+    }
+
+    /* Frosted Glass Sticky Header */
+    .frosted-header {
+      background-color: rgba(250, 247, 244, 0.86);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--hairline-gold);
+    }
+
+    /* Top Scroll Progress Indicator */
+    #scrollProgressBar {
+      transform-origin: left center;
+      transform: scaleX(0);
+      background: linear-gradient(90deg, #C99A8E, #B8936A, #E8D5CE);
+      transition: transform 0.1s linear;
+    }
+
+    /* Ambient Floating Champagne & Rose Light Orbs */
+    @keyframes ambientFloat {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      50% {
+        transform: translate3d(18px, -22px, 0) scale(1.06);
+      }
+    }
+
+    .ambient-orb {
+      animation: ambientFloat 11s ease-in-out infinite;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    .ambient-orb-delayed {
+      animation: ambientFloat 14s ease-in-out 2.5s infinite reverse;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    /* Metallic Champagne Shimmer Sweep */
+    @keyframes shimmerSweep {
+      0% {
+        transform: translateX(-140%) skewX(-20deg);
+      }
+      55%, 100% {
+        transform: translateX(240%) skewX(-20deg);
+      }
+    }
+
+    .btn-shimmer,
+    .badge-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-shimmer::after,
+    .badge-shimmer::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.34) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shimmerSweep 4.5s infinite;
+      pointer-events: none;
+    }
+
+    /* Scroll-Triggered Reveal Choreography */
+    [data-reveal] {
+      opacity: 0;
+      transform: translate3d(0, 26px, 0) scale(0.985);
+      transition: opacity 0.8s var(--ease-luxury), transform 0.8s var(--ease-luxury);
+      will-change: opacity, transform;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    /* Smooth Toxin Panel Crossfade */
+    @keyframes panelFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .panel-animate {
+      animation: panelFadeIn 0.38s var(--ease-luxury) forwards;
+    }
+
+    /* Smooth Grid-Template-Rows FAQ Accordion */
+    .faq-answer-grid {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.38s var(--ease-luxury);
+    }
+
+    .faq-item[data-open="true"] .faq-answer-grid {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-answer-inner {
+      overflow: hidden;
+    }
+
+    .faq-icon {
+      transition: transform 0.35s var(--ease-luxury);
+    }
+
+    .faq-item[data-open="true"] .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Accessibility: Respect Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+
+  <!-- LocalBusiness / MedicalBusiness & MedicalClinic Structured Data (JSON-LD SEO Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["MedicalBusiness", "MedicalClinic"],
+        "@id": "https://www.boostmedispa.com/#clinic",
+        "name": "Boost Med Spa & Wellness",
+        "url": "https://www.boostmedispa.com/",
+        "telephone": "+1-720-575-4061",
+        "priceRange": "$$",
+        "description": "Personalized aesthetic & wellness studio in Lone Tree, Colorado led by Shannon Asuchak, RN (19 years injecting experience). Specializing in Daxxify, Botox, Dysport, Xeomin, and Jeuveau.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "9227 Lincoln Ave, Suite 700, Studio 119",
+          "addressLocality": "Lone Tree",
+          "addressRegion": "CO",
+          "postalCode": "80124",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 39.5358,
+          "longitude": -104.8819
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:30",
+            "closes": "17:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "15:00"
+          }
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Lone Tree", "sameAs": "https://en.wikipedia.org/wiki/Lone_Tree,_Colorado" },
+          { "@type": "City", "name": "Parker" },
+          { "@type": "City", "name": "Highlands Ranch" },
+          { "@type": "City", "name": "Castle Pines" },
+          { "@type": "City", "name": "Centennial" }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "225"
+        },
+        "medicalSpecialty": "Dermatology",
+        "founder": {
+          "@type": "Person",
+          "name": "Shannon Asuchak, RN",
+          "jobTitle": "Registered Nurse, Clinical Educator & Aesthetic Injector"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-ivory text-espresso-900 font-sans antialiased selection:bg-champagne-500 selection:text-white">
+
+  <!-- Top Luxury Announcement Strip -->
+  <div class="bg-espresso-950 text-ivory text-xs sm:text-sm py-2.5 px-4 text-center border-b border-champagne-500/20">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+      <span class="inline-flex items-center gap-1.5 font-semibold text-champagne-400">
+        <span>★★★★★</span>
+        <span>5.0 Rating (225+ Local Reviews)</span>
+      </span>
+      <span class="hidden sm:inline text-champagne-500/40">|</span>
+      <span class="text-ivory/90">Lone Tree, CO • 19 Years RN Injecting Experience</span>
+      <span class="hidden md:inline text-champagne-500/40">|</span>
+      <a href="tel:7205754061" class="text-roseblush-200 hover:text-champagne-400 font-medium transition">
+        Call / Text (720) 575-4061
+      </a>
+    </div>
+  </div>
+
+  <!-- 1. STICKY FROSTED-GLASS HEADER + SCROLL PROGRESS BAR -->
+  <header class="sticky top-0 z-40 frosted-header">
+    <!-- Top Scroll Progress Line -->
+    <div id="scrollProgressBar" class="h-[2.5px] w-full"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      <!-- Brand Logo Lockup -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-10 h-10 rounded-full bg-espresso-900 text-champagne-400 border border-champagne-500/40 flex items-center justify-center font-serif font-semibold text-xl shadow-sm group-hover:bg-champagne-500 group-hover:text-white transition duration-300">
+          B
+        </div>
+        <div class="leading-tight">
+          <span class="block font-serif text-xl sm:text-2xl font-semibold tracking-tight text-espresso-950">
+            Boost Med Spa
+          </span>
+          <span class="block text-[10px] uppercase tracking-[0.22em] text-champagne-600 font-semibold">
+            &amp; Wellness • Lone Tree
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-7 text-sm font-medium text-taupe">
+        <a href="#toxins" class="hover:text-espresso-950 transition">Toxins</a>
+        <a href="#meet-shannon" class="hover:text-espresso-950 transition">Meet Shannon</a>
+        <a href="#pricing" class="hover:text-espresso-950 transition">Pricing</a>
+        <a href="#areas-served" class="hover:text-espresso-950 transition">Areas</a>
+        <a href="#faq" class="hover:text-espresso-950 transition">FAQ</a>
+      </nav>
+
+      <!-- Header Right Actions -->
+      <div class="flex items-center gap-3">
+        <a
+          href="tel:7205754061"
+          class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-espresso-900 hover:text-champagne-600 transition px-2.5 py-2"
+        >
+          <svg class="w-3.5 h-3.5 text-champagne-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+          </svg>
+          <span>(720) 575-4061</span>
+        </a>
+
+        <button
+          onclick="openBookingModal('One-Click Consultation')"
+          class="btn-shimmer bg-champagne-500 hover:bg-champagne-600 active:scale-[0.99] text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2.5 rounded-full shadow-glow transition cursor-pointer"
+        >
+          Book Consultation
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          id="mobileMenuBtn"
+          aria-label="Toggle Menu"
+          aria-expanded="false"
+          onclick="toggleMobileMenu()"
+          class="lg:hidden p-2.5 rounded-xl text-espresso-900 bg-white border border-champagne-500/25 hover:bg-sand transition"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-ivory border-t border-champagne-500/20 px-4 pt-3 pb-5 space-y-1.5 shadow-soft">
+      <a href="#toxins" onclick="closeMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-espresso-900 hover:bg-sand">
+        All 5 Neurotoxins (Daxxify®, Botox® &amp; More)
+      </a>
+      <a href="#meet-shannon" onclick="closeMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-espresso-900 hover:bg-sand">
+        Meet Shannon Asuchak, RN (19 Yrs Exp)
+      </a>
+      <a href="#pricing" onclick="closeMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-espresso-900 hover:bg-sand">
+        Transparent Pricing &amp; VIP Membership
+      </a>
+      <a href="#areas-served" onclick="closeMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-espresso-900 hover:bg-sand">
+        Local Areas Served &amp; Hours
+      </a>
+      <a href="#faq" onclick="closeMobileMenu()" class="block py-2.5 px-3.5 rounded-xl text-sm font-medium text-espresso-900 hover:bg-sand">
+        Patient FAQ
+      </a>
+      <div class="pt-2 flex flex-col sm:flex-row gap-2">
+        <a href="tel:7205754061" class="w-full text-center py-3 rounded-full border border-champagne-500/40 text-espresso-900 font-semibold text-sm bg-white">
+          Call / Text (720) 575-4061
+        </a>
+        <button
+          onclick="closeMobileMenu(); openBookingModal('Mobile Consultation Request');"
+          class="w-full bg-champagne-500 text-white font-semibold text-sm py-3 rounded-full shadow-sm"
+        >
+          Book One-Click Consultation
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO SECTION: WARM LUXURY EDITORIAL + AMBIENT LIGHT ORBS -->
+    <section class="relative overflow-hidden pt-10 pb-16 sm:pt-16 sm:pb-24 border-b border-champagne-500/20">
+      <!-- Ambient Floating Champagne & Rose Light Orbs -->
+      <div aria-hidden="true" class="ambient-orb absolute -top-24 -right-24 w-80 h-80 sm:w-[28rem] sm:h-[28rem] rounded-full bg-gradient-to-br from-roseblush-200/45 via-champagne-200/35 to-transparent blur-3xl"></div>
+      <div aria-hidden="true" class="ambient-orb-delayed absolute -bottom-28 -left-24 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-champagne-200/40 via-roseblush-100/40 to-transparent blur-3xl"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          
+          <!-- Hero Left Editorial Copy -->
+          <div class="lg:col-span-7 space-y-6" data-reveal>
+            <div class="inline-flex flex-wrap items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-champagne-500/30 text-xs font-semibold text-espresso-900 shadow-card">
+              <span class="w-2 h-2 rounded-full bg-roseblush-400"></span>
+              <span>Lone Tree, CO • 9227 Lincoln Ave, Suite 700, Studio 119</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-[3.65rem] font-semibold leading-[1.08] tracking-tight text-espresso-950">
+              Personalized Aesthetic &amp; Wellness Treatments — <span class="italic font-medium text-champagne-600">For Natural, Lasting Results</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-taupe leading-relaxed max-w-2xl">
+              Led personally by <strong class="text-espresso-950 font-semibold">Shannon Asuchak, RN</strong>—bringing <strong class="text-espresso-950 font-semibold">19 years of aesthetic injecting experience</strong> to Lone Tree. We pair anatomical facial mapping with transparent pricing and all five FDA-approved neurotoxins so you look refreshed, never overdone.
+            </p>
+
+            <!-- Primary & Secondary CTAs -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
+              <button
+                onclick="openBookingModal('One-Click Consultation')"
+                class="btn-shimmer bg-champagne-500 hover:bg-champagne-600 text-white font-semibold text-sm sm:text-base px-8 py-4 rounded-full shadow-glow transition flex items-center justify-center gap-2.5 cursor-pointer"
+              >
+                <span>Book Your Consultation</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+
+              <a
+                href="#toxins"
+                class="bg-white hover:bg-sand text-espresso-900 border border-champagne-500/35 font-semibold text-sm sm:text-base px-8 py-4 rounded-full transition text-center shadow-card"
+              >
+                Explore All 5 Toxins
+              </a>
+            </div>
+
+            <!-- Clinical Trust & Authority Metrics -->
+            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-champagne-500/20">
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-bold text-espresso-950">19 Years</p>
+                <p class="text-xs sm:text-sm text-taupe mt-0.5">RN Injecting Experience</p>
+              </div>
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-bold text-champagne-600">5.0 ★</p>
+                <p class="text-xs sm:text-sm text-taupe mt-0.5">225+ Local Reviews</p>
+              </div>
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-bold text-espresso-950">All 5</p>
+                <p class="text-xs sm:text-sm text-taupe mt-0.5">FDA Neurotoxins</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right Card: Clinical Promise & Studio Quick-Access -->
+          <div class="lg:col-span-5" data-reveal data-delay="150">
+            <div class="luxury-card rounded-3xl p-6 sm:p-8 shadow-soft space-y-6 relative bg-white">
+              <div class="flex items-center justify-between border-b border-champagne-500/20 pb-4">
+                <div>
+                  <span class="text-[11px] uppercase tracking-[0.2em] text-champagne-600 font-bold">Direct RN Expertise</span>
+                  <h2 class="font-serif text-2xl font-semibold text-espresso-950 mt-0.5">The Boost Clinical Standard</h2>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-roseblush-100 text-espresso-900 border border-roseblush-200 text-xs font-semibold">
+                  Studio 119
+                </span>
+              </div>
+
+              <ul class="space-y-4 text-sm">
+                <li class="flex items-start gap-3.5">
+                  <span class="w-6 h-6 rounded-full bg-champagne-100 text-champagne-600 border border-champagne-500/30 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</span>
+                  <div>
+                    <p class="font-semibold text-espresso-950">Dynamic Facial Movement Mapping</p>
+                    <p class="text-taupe text-xs sm:text-sm mt-0.5">Every dose is customized to your muscle strength and natural expressions—never a cookie-cutter pattern.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3.5">
+                  <span class="w-6 h-6 rounded-full bg-champagne-100 text-champagne-600 border border-champagne-500/30 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</span>
+                  <div>
+                    <p class="font-semibold text-espresso-950">Featuring DAXXIFY® + All 5 Toxins</p>
+                    <p class="text-taupe text-xs sm:text-sm mt-0.5">Choose peptide-powered DAXXIFY®, Botox®, Dysport®, Xeomin®, or Jeuveau® with honest guidance.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3.5">
+                  <span class="w-6 h-6 rounded-full bg-champagne-100 text-champagne-600 border border-champagne-500/30 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</span>
+                  <div>
+                    <p class="font-semibold text-espresso-950">Upfront Pricing &amp; One-Click Booking</p>
+                    <p class="text-taupe text-xs sm:text-sm mt-0.5">Know exact unit rates and treatment totals before you ever sit in the treatment chair.</p>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="bg-sand rounded-2xl p-4 border border-champagne-500/20 flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-xs text-taupe">9227 Lincoln Ave, Suite 700</p>
+                  <p class="text-sm font-semibold text-espresso-950">Lone Tree, CO 80124</p>
+                </div>
+                <button
+                  onclick="openBookingModal('Same-Week Lone Tree Consultation')"
+                  class="text-xs font-semibold bg-espresso-900 hover:bg-espresso-800 text-white px-4 py-2.5 rounded-full transition shrink-0 cursor-pointer"
+                >
+                  Check Openings
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURED TREATMENT SPOTLIGHT: DAXXIFY® + ALL 5 NEUROTOXINS INTERACTIVE COMPARISON -->
+    <section id="toxins" class="py-16 sm:py-24 bg-ivory">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-14">
+        
+        <!-- Deep Espresso & Champagne Gold Featured DAXXIFY® Spotlight Card -->
+        <div data-reveal class="bg-espresso-900 text-ivory rounded-3xl p-7 sm:p-10 lg:p-12 shadow-soft border border-champagne-500/35 relative overflow-hidden">
+          <!-- Ambient Champagne Glow Inside Spotlight -->
+          <div aria-hidden="true" class="ambient-orb absolute -top-20 right-10 w-72 h-72 rounded-full bg-champagne-500/15 blur-3xl"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div class="lg:col-span-8 space-y-4">
+              <div class="badge-shimmer inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-champagne-500/20 border border-champagne-400/50 text-champagne-200 text-xs font-bold tracking-[0.14em] uppercase">
+                <span>★ FEATURED TREATMENT • DAXXIFY®</span>
+              </div>
+
+              <h2 class="font-serif text-3xl sm:text-4xl lg:text-[2.65rem] font-semibold text-white leading-tight">
+                Peptide-Powered Longevity: Smooth Results Lasting Up to 6–9 Months
+              </h2>
+
+              <p class="text-ivory/85 text-sm sm:text-base leading-relaxed max-w-2xl">
+                DAXXIFY® is the first and only peptide-formulated neuromodulator—completely free of human serum albumin and animal byproducts. Designed for busy South Denver patients who want rapid visible softening in 1–2 days and up to twice the longevity of traditional neurotoxins.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+                <div class="bg-espresso-950/75 border border-champagne-500/25 rounded-2xl p-4">
+                  <p class="text-champagne-400 font-serif text-2xl font-semibold">1–2 Days</p>
+                  <p class="text-xs text-ivory/75 mt-0.5">Rapid visible smoothing onset</p>
+                </div>
+                <div class="bg-espresso-950/75 border border-champagne-500/25 rounded-2xl p-4">
+                  <p class="text-champagne-400 font-serif text-2xl font-semibold">6–9 Months</p>
+                  <p class="text-xs text-ivory/75 mt-0.5">Extended duration • Fewer visits</p>
+                </div>
+                <div class="bg-espresso-950/75 border border-champagne-500/25 rounded-2xl p-4">
+                  <p class="text-champagne-400 font-serif text-2xl font-semibold">$8–$9 / Unit</p>
+                  <p class="text-xs text-ivory/75 mt-0.5">Transparent peptide unit pricing</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 bg-espresso-950/85 border border-champagne-500/30 rounded-2xl p-6 space-y-4">
+              <span class="text-xs uppercase tracking-[0.18em] text-roseblush-400 font-bold">Lone Tree Featured Special</span>
+              <h3 class="font-serif text-2xl text-white font-semibold">Reserve Your DAXXIFY® Visit</h3>
+              <p class="text-xs sm:text-sm text-ivory/80 leading-relaxed">
+                Shannon evaluates your dynamic expression lines and confirms your exact unit count and price before any treatment begins.
+              </p>
+              <button
+                onclick="openBookingModal('DAXXIFY® Featured Treatment')"
+                class="btn-shimmer w-full bg-champagne-500 hover:bg-champagne-600 text-white font-semibold text-sm py-3.5 px-5 rounded-full transition shadow-glow cursor-pointer"
+              >
+                Book DAXXIFY® Consultation &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive 5-Toxin Comparison Tabs -->
+        <div class="space-y-7" data-reveal>
+          <div class="text-center max-w-2xl mx-auto space-y-2.5">
+            <span class="text-xs uppercase tracking-[0.22em] text-champagne-600 font-bold">Customized Neuromodulators</span>
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold text-espresso-950">
+              Compare All Five FDA-Approved Toxins
+            </h2>
+            <p class="text-sm sm:text-base text-taupe">
+              No single toxin is right for every face. Explore onset speed, longevity, ideal zones, and upfront pricing across all five options available at Boost.
+            </p>
+          </div>
+
+          <!-- Animated Pill Tab Bar -->
+          <div role="tablist" aria-label="Neurotoxin Options" class="flex flex-wrap justify-center gap-2 sm:gap-2.5">
+            <button
+              role="tab"
+              aria-selected="true"
+              data-toxin="daxxify"
+              onclick="selectToxin('daxxify')"
+              class="toxin-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-300 cursor-pointer bg-espresso-900 text-white border-espresso-900 shadow-sm"
+            >
+              ★ DAXXIFY® (Featured)
+            </button>
+            <button
+              role="tab"
+              aria-selected="false"
+              data-toxin="botox"
+              onclick="selectToxin('botox')"
+              class="toxin-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-300 cursor-pointer bg-white text-espresso-900 border-champagne-500/30 hover:border-champagne-500"
+            >
+              BOTOX® Cosmetic
+            </button>
+            <button
+              role="tab"
+              aria-selected="false"
+              data-toxin="dysport"
+              onclick="selectToxin('dysport')"
+              class="toxin-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-300 cursor-pointer bg-white text-espresso-900 border-champagne-500/30 hover:border-champagne-500"
+            >
+              Dysport®
+            </button>
+            <button
+              role="tab"
+              aria-selected="false"
+              data-toxin="xeomin"
+              onclick="selectToxin('xeomin')"
+              class="toxin-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-300 cursor-pointer bg-white text-espresso-900 border-champagne-500/30 hover:border-champagne-500"
+            >
+              Xeomin®
+            </button>
+            <button
+              role="tab"
+              aria-selected="false"
+              data-toxin="jeuveau"
+              onclick="selectToxin('jeuveau')"
+              class="toxin-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-300 cursor-pointer bg-white text-espresso-900 border-champagne-500/30 hover:border-champagne-500"
+            >
+              Jeuveau®
+            </button>
+          </div>
+
+          <!-- Dynamic Toxin Detail Card -->
+          <div id="toxinDetailCard" class="luxury-card rounded-3xl p-6 sm:p-10 shadow-card">
+            <!-- Populated cleanly via JS (default initialized to Daxxify) -->
+          </div>
+
+          <!-- Shannon's Clinical Quote Strip -->
+          <div class="bg-sand border border-champagne-500/25 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <div class="w-12 h-12 rounded-full bg-roseblush-200/70 text-espresso-950 font-serif font-bold text-2xl flex items-center justify-center shrink-0">
+              “
+            </div>
+            <div class="space-y-1">
+              <p class="font-serif italic text-xl sm:text-2xl text-espresso-950 leading-snug">
+                “I spend far more time watching your face move than injecting it—because natural movement is what keeps you looking like yourself.”
+              </p>
+              <p class="text-xs uppercase tracking-[0.16em] text-champagne-600 font-bold">
+                — Shannon Asuchak, RN • 19 Years Aesthetic Injecting Experience
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. MEET SHANNON ASUCHAK, RN AUTHORITY SECTION -->
+    <section id="meet-shannon" class="py-16 sm:py-24 bg-sand border-y border-champagne-500/20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          
+          <!-- Left Column: Honest Client Headshot Placeholder + Credentials Card -->
+          <div class="lg:col-span-5" data-reveal>
+            <div class="aspect-[4/5] rounded-3xl bg-white border border-champagne-500/30 p-7 flex flex-col items-center justify-center text-center shadow-soft relative">
+              <div class="w-20 h-20 rounded-full bg-blush border border-champagne-500/30 text-champagne-600 flex items-center justify-center mb-4">
+                <svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+              </div>
+              <span class="px-3.5 py-1 rounded-full bg-roseblush-100 text-espresso-900 border border-roseblush-200 text-[11px] font-bold uppercase tracking-wider mb-2.5">
+                Verified Clinic Portrait Slot
+              </span>
+              <h3 class="font-serif text-2xl font-semibold text-espresso-950">Shannon Asuchak, RN</h3>
+              <p class="text-xs text-taupe max-w-xs mt-1.5 leading-relaxed">
+                Dedicated frame for Shannon’s authentic portrait in Studio 119—zero generic stock models.
+              </p>
+
+              <!-- 19 Years Experience Credential Pill -->
+              <div class="mt-6 bg-espresso-900 text-ivory px-6 py-3.5 rounded-2xl border border-champagne-500/40 shadow-sm">
+                <p class="font-serif text-2xl font-semibold text-champagne-400">19 Years</p>
+                <p class="text-[11px] uppercase tracking-[0.16em] text-ivory/85">RN Injecting &amp; Clinical Educator</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Editorial Authority Narrative -->
+          <div class="lg:col-span-7 space-y-6" data-reveal data-delay="120">
+            <span class="text-xs uppercase tracking-[0.22em] text-champagne-600 font-bold">
+              Clinical Authority &amp; Facial Harmony
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold text-espresso-950 leading-tight">
+              Meet Shannon Asuchak, RN — Founder, Injector &amp; Clinical Educator
+            </h2>
+            <p class="text-base text-taupe leading-relaxed">
+              With <strong class="text-espresso-950 font-semibold">19 years of specialized nursing experience</strong> across aesthetic medicine, dermatology, and plastic surgery, Shannon Asuchak, RN brings rare anatomical mastery to every appointment at Boost Med Spa &amp; Wellness in Lone Tree.
+            </p>
+            <p class="text-base text-taupe leading-relaxed">
+              Beyond treating patients, Shannon has served as a <strong class="text-espresso-950 font-semibold">clinical educator training fellow medical providers</strong> in advanced neurotoxin techniques, laser modalities, and <strong class="text-espresso-950 font-semibold">Selphyl® PRP</strong> regenerative aesthetics. Her approach centers on subtle, balanced restoration—never frozen foreheads or overfilled features.
+            </p>
+
+            <!-- 3 Clinical Credentials Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+              <div class="bg-white rounded-2xl p-4 border border-champagne-500/25">
+                <p class="text-xs uppercase tracking-wider text-champagne-600 font-bold">Background</p>
+                <p class="font-serif text-lg font-semibold text-espresso-950 mt-1">Dermatology &amp; Plastic Surgery</p>
+                <p class="text-xs text-taupe mt-1">19 years hands-on clinical precision.</p>
+              </div>
+              <div class="bg-white rounded-2xl p-4 border border-champagne-500/25">
+                <p class="text-xs uppercase tracking-wider text-champagne-600 font-bold">Leadership</p>
+                <p class="font-serif text-lg font-semibold text-espresso-950 mt-1">National Laser &amp; Injector Trainer</p>
+                <p class="text-xs text-taupe mt-1">Educating peers on safety &amp; outcomes.</p>
+              </div>
+              <div class="bg-white rounded-2xl p-4 border border-champagne-500/25">
+                <p class="text-xs uppercase tracking-wider text-champagne-600 font-bold">Regenerative</p>
+                <p class="font-serif text-lg font-semibold text-espresso-950 mt-1">Advanced Selphyl® PRP</p>
+                <p class="text-xs text-taupe mt-1">Collagen &amp; natural tissue rejuvenation.</p>
+              </div>
+            </div>
+
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <button
+                onclick="openBookingModal('Consultation with Shannon Asuchak, RN')"
+                class="btn-shimmer bg-espresso-900 hover:bg-espresso-800 text-white font-semibold text-sm px-7 py-3.5 rounded-full shadow-soft transition cursor-pointer"
+              >
+                Book Directly with Shannon, RN &rarr;
+              </button>
+              <a href="tel:7205754061" class="text-sm font-semibold text-champagne-600 hover:text-espresso-950 transition">
+                Or Call/Text (720) 575-4061
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TRANSPARENT PRICING & BOOST BEAUTY VIP MEMBERSHIP SECTION -->
+    <section id="pricing" class="py-16 sm:py-24 bg-ivory">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-12">
+        <div class="text-center max-w-2xl mx-auto space-y-2.5" data-reveal>
+          <span class="text-xs uppercase tracking-[0.22em] text-champagne-600 font-bold">Complete Cost Clarity</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-[2.65rem] font-semibold text-espresso-950">
+            Transparent Pricing &amp; Boost Beauty Membership
+          </h2>
+          <p class="text-sm sm:text-base text-taupe">
+            No surprise bills or pressure sales. View our straightforward unit rates, multi-area value options, and bankable VIP membership perks below.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          
+          <!-- Tier 1: Classic Neurotoxins -->
+          <div data-reveal data-delay="60" class="luxury-card rounded-3xl p-7 flex flex-col justify-between shadow-card">
+            <div class="space-y-4">
+              <span class="inline-block px-3 py-1 rounded-full bg-sand border border-champagne-500/25 text-xs font-semibold text-taupe">
+                Classic Neuromodulators
+              </span>
+              <h3 class="font-serif text-2xl font-semibold text-espresso-950">Botox®, Dysport®, Xeomin® &amp; Jeuveau®</h3>
+              <div class="pt-1 pb-3 border-b border-champagne-500/20">
+                <span class="font-serif text-3xl sm:text-4xl font-bold text-espresso-950">$12–$13</span>
+                <span class="text-sm text-taupe"> / unit (Botox-equiv.)</span>
+              </div>
+              <ul class="space-y-2.5 text-sm text-taupe">
+                <li class="flex items-start gap-2"><span class="text-champagne-600 font-bold">✓</span><span>Full facial movement mapping by Shannon, RN</span></li>
+                <li class="flex items-start gap-2"><span class="text-champagne-600 font-bold">✓</span><span>Forehead, frown lines (11s) &amp; crow's feet</span></li>
+                <li class="flex items-start gap-2"><span class="text-champagne-600 font-bold">✓</span><span>Lip flip, brow lift, masseter &amp; neck bands</span></li>
+                <li class="flex items-start gap-2"><span class="text-champagne-600 font-bold">✓</span><span>2-week precision follow-up check included</span></li>
+              </ul>
+            </div>
+            <div class="pt-6">
+              <button
+                onclick="openBookingModal('Classic Toxin Visit ($12-$13/unit)')"
+                class="w-full py-3.5 px-5 rounded-full border border-espresso-900 text-espresso-900 hover:bg-espresso-900 hover:text-white font-semibold text-sm transition cursor-pointer"
+              >
+                Book Classic Toxin
+              </button>
+            </div>
+          </div>
+
+          <!-- Tier 2: Featured DAXXIFY® -->
+          <div data-reveal data-delay="140" class="bg-espresso-900 text-ivory border-2 border-champagne-500 rounded-3xl p-7 flex flex-col justify-between shadow-soft relative">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="badge-shimmer inline-block px-3.5 py-1 rounded-full bg-champagne-500/20 border border-champagne-400/50 text-xs font-bold text-champagne-200">
+                  ★ Longest-Lasting Toxin
+                </span>
+              </div>
+              <h3 class="font-serif text-2xl font-semibold text-white">DAXXIFY® Peptide Toxin</h3>
+              <div class="pt-1 pb-3 border-b border-champagne-500/25">
+                <span class="font-serif text-3xl sm:text-4xl font-bold text-champagne-400">$8–$9</span>
+                <span class="text-sm text-ivory/80"> / Daxxify unit</span>
+                <p class="text-xs text-ivory/70 mt-1">*Uses a 2:1 peptide unit conversion (~40 units typical per area).</p>
+              </div>
+              <ul class="space-y-2.5 text-sm text-ivory/90">
+                <li class="flex items-start gap-2"><span class="text-champagne-400 font-bold">✓</span><span>Lasts up to 6–9 months (2x traditional toxins)</span></li>
+                <li class="flex items-start gap-2"><span class="text-champagne-400 font-bold">✓</span><span>Rapid visible smoothing in 1–2 days</span></li>
+                <li class="flex items-start gap-2"><span class="text-champagne-400 font-bold">✓</span><span>Peptide-stabilized • Zero human/animal proteins</span></li>
+                <li class="flex items-start gap-2"><span class="text-champagne-400 font-bold">✓</span><span>Multi-area full-face custom packages available</span></li>
+              </ul>
+            </div>
+            <div class="pt-6">
+              <button
+                onclick="openBookingModal('DAXXIFY® Featured Visit')"
+                class="btn-shimmer w-full py-3.5 px-5 rounded-full bg-champagne-500 hover:bg-champagne-600 text-white font-semibold text-sm transition shadow-glow cursor-pointer"
+              >
+                Book DAXXIFY® Visit &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- Tier 3: Boost Beauty VIP Membership -->
+          <div data-reveal data-delay="220" class="luxury-card rounded-3xl p-7 flex flex-col justify-between shadow-card bg-gradient-to-b from-white to-blush/40">
+            <div class="space-y-4">
+              <span class="inline-block px-3 py-1 rounded-full bg-roseblush-100 border border-roseblush-200 text-espresso-900 text-xs font-semibold">
+                Save All Year • 100% Banked
+              </span>
+              <h3 class="font-serif text-2xl font-semibold text-espresso-950">Boost Beauty VIP Membership</h3>
+              <div class="pt-1 pb-3 border-b border-champagne-500/20">
+                <span class="font-serif text-3xl sm:text-4xl font-bold text-espresso-950">$149</span>
+                <span class="text-sm text-taupe"> / month (every dollar goes toward your treatments)</span>
+              </div>
+              <ul class="space-y-2.5 text-sm text-taupe">
+                <li class="flex items-start gap-2"><span class="text-champagne-600 font-bold">✓</span><span>100% of monthly dues bank into your aesthetic wallet</span></li>
+                <li class="flex items-start gap-2"><span class="text-champagne-600 font-bold">✓</span><span>Preferred VIP member pricing on all 5 neurotoxins</span></li>
+                <li class="flex items-start gap-2"><span class="text-champagne-600 font-bold">✓</span><span>15% off medical-grade skincare &amp; chemical peels</span></li>
+                <li class="flex items-start gap-2"><span class="text-champagne-600 font-bold">✓</span><span>Priority Lone Tree scheduling &amp; birthday gift</span></li>
+              </ul>
+            </div>
+            <div class="pt-6">
+              <button
+                onclick="openBookingModal('Boost Beauty VIP Membership')"
+                class="w-full py-3.5 px-5 rounded-full bg-espresso-900 hover:bg-espresso-800 text-white font-semibold text-sm transition cursor-pointer"
+              >
+                Join or Ask About VIP
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONSENTED PATIENT GALLERY & CLINICAL STANDARDS (ZERO STOCK PHOTOS) -->
+    <section class="py-16 sm:py-20 bg-blush border-t border-champagne-500/20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-10" data-reveal>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div class="space-y-2">
+            <span class="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] text-champagne-600 font-bold">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Zero Stock Watermarked Before/Afters
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-espresso-950">
+              Consented Patient Results Gallery
+            </h2>
+            <p class="text-sm sm:text-base text-taupe max-w-2xl">
+              Authentic clinical documentation only. Every photo showcased in this gallery belongs to an actual Boost Med Spa patient photographed in consistent studio lighting with written HIPAA consent.
+            </p>
+          </div>
+          <button
+            onclick="openBookingModal('In-Clinic Results Review')"
+            class="self-start md:self-auto text-sm font-semibold text-espresso-950 hover:text-champagne-600 underline underline-offset-4 cursor-pointer"
+          >
+            Request Full Case Portfolio In-Clinic &rarr;
+          </button>
+        </div>
+
+        <!-- 3 Verified Consented Patient Photo Slots -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="luxury-card rounded-3xl p-5 space-y-4">
+            <div class="aspect-[16/10] rounded-2xl bg-ivory border border-dashed border-champagne-500/45 flex flex-col items-center justify-center p-4 text-center">
+              <span class="text-xs font-bold uppercase tracking-wider text-champagne-600">Consented Patient Case #01</span>
+              <p class="text-[11px] text-taupe mt-1">Glabellar (11s) &amp; Forehead • Baseline vs. Day 14 (Standardized Studio Lighting)</p>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-champagne-100 text-espresso-900 text-xs font-semibold">DAXXIFY® • 40 Units</span>
+              <span class="text-[11px] font-medium text-taupe">HIPAA Consented</span>
+            </div>
+            <p class="text-xs sm:text-sm text-taupe">
+              Smooth frown-line relaxation while preserving natural brow lift and expression.
+            </p>
+          </div>
+
+          <div class="luxury-card rounded-3xl p-5 space-y-4">
+            <div class="aspect-[16/10] rounded-2xl bg-ivory border border-dashed border-champagne-500/45 flex flex-col items-center justify-center p-4 text-center">
+              <span class="text-xs font-bold uppercase tracking-wider text-champagne-600">Consented Patient Case #02</span>
+              <p class="text-[11px] text-taupe mt-1">Upper Face + Crow’s Feet • Baseline vs. Week 2 (Matched 45° Clinical Angle)</p>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-roseblush-100 text-espresso-900 text-xs font-semibold">BOTOX® • 34 Units</span>
+              <span class="text-[11px] font-medium text-taupe">HIPAA Consented</span>
+            </div>
+            <p class="text-xs sm:text-sm text-taupe">
+              Refreshed, rested eye area with balanced symmetry and zero heaviness.
+            </p>
+          </div>
+
+          <div class="luxury-card rounded-3xl p-5 space-y-4">
+            <div class="aspect-[16/10] rounded-2xl bg-ivory border border-dashed border-champagne-500/45 flex flex-col items-center justify-center p-4 text-center">
+              <span class="text-xs font-bold uppercase tracking-wider text-champagne-600">Consented Patient Case #03</span>
+              <p class="text-[11px] text-taupe mt-1">6-Month Longevity Check-In • DAXXIFY® (Verified Studio Documentation)</p>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-champagne-100 text-espresso-900 text-xs font-semibold">DAXXIFY® • 24-Wk Follow-Up</span>
+              <span class="text-[11px] font-medium text-taupe">HIPAA Consented</span>
+            </div>
+            <p class="text-xs sm:text-sm text-taupe">
+              Sustained smoothness six months post-injection at Boost Med Spa Lone Tree.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. INTERACTIVE PATIENT FAQ ACCORDION -->
+    <section id="faq" class="py-16 sm:py-24 bg-ivory border-t border-champagne-500/20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-10" data-reveal>
+        <div class="text-center space-y-2.5">
+          <span class="text-xs uppercase tracking-[0.22em] text-champagne-600 font-bold">Patient Education</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-espresso-950">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-sm sm:text-base text-taupe">
+            Everything you need to know before your neurotoxin consultation with Shannon Asuchak, RN.
+          </p>
+        </div>
+
+        <div class="space-y-3.5" id="faqAccordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item luxury-card rounded-2xl px-6 py-4" data-open="true">
+            <button
+              type="button"
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between gap-4 text-left py-1 cursor-pointer"
+            >
+              <span class="font-serif text-xl font-semibold text-espresso-950">How is DAXXIFY® different from Botox®, Dysport®, Xeomin®, or Jeuveau®?</span>
+              <span class="faq-icon w-7 h-7 rounded-full bg-sand text-espresso-900 flex items-center justify-center text-lg font-medium shrink-0">+</span>
+            </button>
+            <div class="faq-answer-grid">
+              <div class="faq-answer-inner">
+                <p class="pt-3 pb-1 text-sm text-taupe leading-relaxed border-t border-champagne-500/15 mt-2">
+                  Unlike traditional neurotoxins that rely on human serum albumin or animal-derived proteins to stabilize the active ingredient, DAXXIFY® uses a novel synthetic peptide stabilizer. This allows faster onset (often 1–2 days) and extended longevity averaging 6 months—and up to 9 months for many patients.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item luxury-card rounded-2xl px-6 py-4" data-open="false">
+            <button
+              type="button"
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between gap-4 text-left py-1 cursor-pointer"
+            >
+              <span class="font-serif text-xl font-semibold text-espresso-950">How many units will I need, and will I know the exact cost upfront?</span>
+              <span class="faq-icon w-7 h-7 rounded-full bg-sand text-espresso-900 flex items-center justify-center text-lg font-medium shrink-0">+</span>
+            </button>
+            <div class="faq-answer-grid">
+              <div class="faq-answer-inner">
+                <p class="pt-3 pb-1 text-sm text-taupe leading-relaxed border-t border-champagne-500/15 mt-2">
+                  Yes—100% upfront transparency. During your consultation, Shannon watches how your facial muscles contract at rest and in animation, recommends a conservative unit dose tailored to your goals, and confirms your exact dollar total before opening a vial.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item luxury-card rounded-2xl px-6 py-4" data-open="false">
+            <button
+              type="button"
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between gap-4 text-left py-1 cursor-pointer"
+            >
+              <span class="font-serif text-xl font-semibold text-espresso-950">Who performs my injections at Boost Med Spa &amp; Wellness?</span>
+              <span class="faq-icon w-7 h-7 rounded-full bg-sand text-espresso-900 flex items-center justify-center text-lg font-medium shrink-0">+</span>
+            </button>
+            <div class="faq-answer-grid">
+              <div class="faq-answer-inner">
+                <p class="pt-3 pb-1 text-sm text-taupe leading-relaxed border-t border-champagne-500/15 mt-2">
+                  Every neurotoxin consultation and injection is performed personally by founder Shannon Asuchak, RN, who brings 19 years of aesthetic, dermatology, and plastic surgery nursing experience—never delegated to junior or rotating staff.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item luxury-card rounded-2xl px-6 py-4" data-open="false">
+            <button
+              type="button"
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between gap-4 text-left py-1 cursor-pointer"
+            >
+              <span class="font-serif text-xl font-semibold text-espresso-950">Where is Boost Med Spa located, and is parking convenient?</span>
+              <span class="faq-icon w-7 h-7 rounded-full bg-sand text-espresso-900 flex items-center justify-center text-lg font-medium shrink-0">+</span>
+            </button>
+            <div class="faq-answer-grid">
+              <div class="faq-answer-inner">
+                <p class="pt-3 pb-1 text-sm text-taupe leading-relaxed border-t border-champagne-500/15 mt-2">
+                  We are located at <strong>9227 Lincoln Ave, Suite 700, Studio 119, Lone Tree, CO 80124</strong>—just minutes from Park Meadows, I-25, and C-470 with convenient complimentary surface parking right outside.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. LOCAL SEO SERVICE AREAS & STUDIO LOCATION SECTION -->
+    <section id="areas-served" class="py-16 sm:py-24 bg-sand border-t border-champagne-500/20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-10" data-reveal>
+        <div class="text-center max-w-2xl mx-auto space-y-2.5">
+          <span class="text-xs uppercase tracking-[0.22em] text-champagne-600 font-bold">South Denver Metro Aesthetic Destination</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-espresso-950">
+            Serving Lone Tree &amp; Surrounding Communities
+          </h2>
+          <p class="text-sm sm:text-base text-taupe">
+            Minutes from South Denver’s premier neighborhoods—with dedicated local care for patients across Douglas and Arapahoe counties.
+          </p>
+        </div>
+
+        <!-- 5 Local SEO Neighborhood Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div class="luxury-card rounded-2xl p-5 space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-champagne-600">Home Studio • 80124</span>
+            <h3 class="font-serif text-xl font-semibold text-espresso-950">Lone Tree, CO</h3>
+            <p class="text-xs text-taupe leading-relaxed">9227 Lincoln Ave near Park Meadows &amp; RidgeGate.</p>
+            <button onclick="openBookingModal('Lone Tree Patient Visit')" class="text-xs font-semibold text-espresso-950 hover:text-champagne-600 pt-1 inline-block cursor-pointer">
+              Book Lone Tree &rarr;
+            </button>
+          </div>
+
+          <div class="luxury-card rounded-2xl p-5 space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-taupe">10 Mins East</span>
+            <h3 class="font-serif text-xl font-semibold text-espresso-950">Parker, CO</h3>
+            <p class="text-xs text-taupe leading-relaxed">Easy access straight west along Lincoln Ave for Parker patients.</p>
+            <button onclick="openBookingModal('Parker Patient Visit')" class="text-xs font-semibold text-espresso-950 hover:text-champagne-600 pt-1 inline-block cursor-pointer">
+              Book from Parker &rarr;
+            </button>
+          </div>
+
+          <div class="luxury-card rounded-2xl p-5 space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-taupe">8 Mins West</span>
+            <h3 class="font-serif text-xl font-semibold text-espresso-950">Highlands Ranch</h3>
+            <p class="text-xs text-taupe leading-relaxed">Quick C-470 &amp; Quebec access for Highlands Ranch residents.</p>
+            <button onclick="openBookingModal('Highlands Ranch Patient Visit')" class="text-xs font-semibold text-espresso-950 hover:text-champagne-600 pt-1 inline-block cursor-pointer">
+              Book from HR &rarr;
+            </button>
+          </div>
+
+          <div class="luxury-card rounded-2xl p-5 space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-taupe">10 Mins South</span>
+            <h3 class="font-serif text-xl font-semibold text-espresso-950">Castle Pines</h3>
+            <p class="text-xs text-taupe leading-relaxed">Direct I-25 N commute to private Studio 119 care.</p>
+            <button onclick="openBookingModal('Castle Pines Patient Visit')" class="text-xs font-semibold text-espresso-950 hover:text-champagne-600 pt-1 inline-block cursor-pointer">
+              Book Castle Pines &rarr;
+            </button>
+          </div>
+
+          <div class="luxury-card rounded-2xl p-5 space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-taupe">7 Mins North</span>
+            <h3 class="font-serif text-xl font-semibold text-espresso-950">Centennial</h3>
+            <p class="text-xs text-taupe leading-relaxed">Serving Centennial &amp; South Denver Tech Center patients.</p>
+            <button onclick="openBookingModal('Centennial / South Denver Visit')" class="text-xs font-semibold text-espresso-950 hover:text-champagne-600 pt-1 inline-block cursor-pointer">
+              Book Centennial &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. DEEP ESPRESSO LUXURY FOOTER -->
+  <footer class="bg-espresso-950 text-ivory pt-16 pb-24 sm:pb-16 border-t border-champagne-500/25">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+        <!-- Brand Column -->
+        <div class="space-y-3.5">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full bg-champagne-500 text-white flex items-center justify-center font-serif font-bold text-lg">B</div>
+            <span class="font-serif text-xl font-semibold text-white">Boost Med Spa &amp; Wellness</span>
+          </div>
+          <p class="text-ivory/75 text-xs leading-relaxed">
+            RN-led medical aesthetics studio in Lone Tree, Colorado dedicated to natural neurotoxin results, clinical safety, and upfront pricing.
+          </p>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-espresso-900 border border-champagne-500/30 text-[11px] text-champagne-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            MedicalBusiness + MedicalClinic Schema Active
+          </div>
+        </div>
+
+        <!-- Address & Contact -->
+        <div class="space-y-2.5">
+          <h3 class="font-serif text-lg font-semibold text-white">Studio Address &amp; Direct</h3>
+          <address class="not-italic text-ivory/80 text-xs sm:text-sm space-y-1">
+            <p class="font-semibold text-white">Boost Med Spa &amp; Wellness</p>
+            <p>9227 Lincoln Ave, Suite 700, Studio 119</p>
+            <p>Lone Tree, CO 80124</p>
+          </address>
+          <div class="pt-1 space-y-1.5">
+            <a href="tel:7205754061" class="block text-xs sm:text-sm font-semibold text-champagne-400 hover:text-roseblush-200 transition">
+              📞 (720) 575-4061
+            </a>
+            <a
+              href="https://maps.google.com/?q=9227+Lincoln+Ave+Suite+700+Studio+119+Lone+Tree+CO+80124"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-xs font-semibold text-roseblush-200 hover:text-white underline underline-offset-4 transition"
+            >
+              Get Google Maps Directions &nearr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Hours & Services -->
+        <div class="space-y-2.5">
+          <h3 class="font-serif text-lg font-semibold text-white">Clinic Hours</h3>
+          <ul class="text-xs sm:text-sm text-ivory/80 space-y-1">
+            <li>Mon–Fri: 9:30 AM – 5:30 PM</li>
+            <li>Saturday: 10:00 AM – 3:00 PM</li>
+            <li>Sunday: Closed</li>
+          </ul>
+          <p class="text-xs text-champagne-400 pt-1">
+            DAXXIFY® • BOTOX® • Dysport® • Xeomin® • Jeuveau®
+          </p>
+        </div>
+
+        <!-- One-Click Booking CTA -->
+        <div class="space-y-3">
+          <h3 class="font-serif text-lg font-semibold text-white">Book Your Visit</h3>
+          <p class="text-xs text-ivory/75">
+            Reserve your one-on-one consultation with Shannon Asuchak, RN in under 60 seconds.
+          </p>
+          <button
+            onclick="openBookingModal('Footer One-Click Booking')"
+            class="btn-shimmer w-full bg-champagne-500 hover:bg-champagne-600 text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-full transition cursor-pointer"
+          >
+            Book Consultation Online
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-champagne-500/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ivory/60">
+        <p>&copy; <span id="currentYear"></span> Boost Med Spa &amp; Wellness • Shannon Asuchak, RN. All rights reserved.</p>
+        <p>9227 Lincoln Ave, Suite 700, Studio 119, Lone Tree, CO 80124</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE ONE-CLICK CONSULTATION BOOKING MODAL -->
+  <div
+    id="bookingModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-espresso-950/65 backdrop-blur-sm"
+  >
+    <div class="bg-ivory border border-champagne-500/35 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative panel-animate">
+      <button
+        onclick="closeBookingModal()"
+        aria-label="Close Booking Modal"
+        class="absolute top-5 right-5 w-9 h-9 rounded-full bg-sand hover:bg-blush text-espresso-950 flex items-center justify-center transition cursor-pointer"
+      >
+        ✕
+      </button>
+
+      <div id="bookingFormWrapper" class="space-y-5">
+        <div>
+          <span class="text-xs uppercase tracking-[0.18em] text-champagne-600 font-bold">Boost Med Spa • Direct Scheduling</span>
+          <h3 id="modalTitle" class="font-serif text-2xl sm:text-3xl font-semibold text-espresso-950 mt-1">
+            Book Your Consultation
+          </h3>
+          <p class="text-xs sm:text-sm text-taupe mt-1">
+            9227 Lincoln Ave, Suite 700, Studio 119, Lone Tree, CO 80124 • (720) 575-4061
+          </p>
+        </div>
+
+        <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+          <div>
+            <label for="bookingService" class="block text-xs font-semibold text-espresso-950 mb-1">Treatment or Consultation Focus</label>
+            <select
+              id="bookingService"
+              class="w-full rounded-xl bg-white border border-champagne-500/30 px-3.5 py-2.5 text-sm text-espresso-950 focus:outline-none focus:border-champagne-500"
+            >
+              <option value="DAXXIFY® Featured Treatment">DAXXIFY® (Featured Long-Lasting Toxin)</option>
+              <option value="BOTOX® Cosmetic">BOTOX® Cosmetic</option>
+              <option value="Dysport®">Dysport®</option>
+              <option value="Xeomin®">Xeomin®</option>
+              <option value="Jeuveau®">Jeuveau®</option>
+              <option value="New Patient RN Consultation">Not Sure — Help Me Choose (RN Consult)</option>
+              <option value="Boost Beauty VIP Membership ($149/mo)">Boost Beauty VIP Membership ($149/mo)</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label for="patientName" class="block text-xs font-semibold text-espresso-950 mb-1">Full Name *</label>
+              <input
+                id="patientName"
+                type="text"
+                required
+                placeholder="Jane Doe"
+                class="w-full rounded-xl bg-white border border-champagne-500/30 px-3.5 py-2.5 text-sm text-espresso-950 focus:outline-none focus:border-champagne-500"
+              />
+            </div>
+            <div>
+              <label for="patientPhone" class="block text-xs font-semibold text-espresso-950 mb-1">Mobile Phone (for SMS) *</label>
+              <input
+                id="patientPhone"
+                type="tel"
+                required
+                placeholder="(720) 555-0199"
+                class="w-full rounded-xl bg-white border border-champagne-500/30 px-3.5 py-2.5 text-sm text-espresso-950 focus:outline-none focus:border-champagne-500"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label for="preferredDay" class="block text-xs font-semibold text-espresso-950 mb-1">Preferred Day</label>
+              <select
+                id="preferredDay"
+                class="w-full rounded-xl bg-white border border-champagne-500/30 px-3.5 py-2.5 text-sm text-espresso-950 focus:outline-none focus:border-champagne-500"
+              >
+                <option>Next Available Opening</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+              </select>
+            </div>
+            <div>
+              <label for="preferredTime" class="block text-xs font-semibold text-espresso-950 mb-1">Preferred Window</label>
+              <select
+                id="preferredTime"
+                class="w-full rounded-xl bg-white border border-champagne-500/30 px-3.5 py-2.5 text-sm text-espresso-950 focus:outline-none focus:border-champagne-500"
+              >
+                <option>Morning (9:30 AM – 12:00 PM)</option>
+                <option>Afternoon (12:00 PM – 3:00 PM)</option>
+                <option>Late Afternoon (3:00 PM – 5:30 PM)</option>
+              </select>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn-shimmer w-full bg-champagne-500 hover:bg-champagne-600 text-white font-semibold text-sm py-3.5 rounded-full shadow-glow transition cursor-pointer"
+          >
+            Confirm Consultation Request &rarr;
+          </button>
+          <p class="text-[11px] text-center text-taupe">
+            Seamless bridge to Boost Med Spa’s online scheduling portal.
+          </p>
+        </form>
+      </div>
+
+      <!-- Instant Confirmation State -->
+      <div id="bookingConfirmation" class="hidden text-center py-6 space-y-4">
+        <div class="w-14 h-14 rounded-full bg-champagne-100 border border-champagne-500/40 text-champagne-600 flex items-center justify-center mx-auto text-2xl font-bold">
+          ✓
+        </div>
+        <h3 class="font-serif text-2xl font-semibold text-espresso-950">Consultation Request Queued!</h3>
+        <p id="confirmationSummary" class="text-sm text-taupe leading-relaxed"></p>
+        <div class="bg-sand border border-champagne-500/25 rounded-2xl p-4 text-xs text-left space-y-1">
+          <p class="font-semibold text-espresso-950">Boost Med Spa &amp; Wellness</p>
+          <p class="text-taupe">9227 Lincoln Ave, Suite 700, Studio 119, Lone Tree, CO 80124 • (720) 575-4061</p>
+        </div>
+        <button
+          onclick="closeBookingModal()"
+          class="bg-espresso-900 text-white text-sm font-semibold px-7 py-2.5 rounded-full cursor-pointer"
+        >
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING SMS / CONCIERGE CHAT WIDGET LINKING TO (720) 575-4061 -->
+  <div class="fixed bottom-4 right-4 z-40">
+    <div
+      id="chatWidgetBox"
+      class="hidden mb-3 w-80 sm:w-88 bg-ivory border border-champagne-500/35 rounded-3xl shadow-2xl overflow-hidden panel-animate"
+    >
+      <div class="bg-espresso-900 text-white p-4 flex items-center justify-between border-b border-champagne-500/30">
+        <div>
+          <p class="font-serif text-lg font-semibold">Text Boost Concierge</p>
+          <p class="text-[11px] text-champagne-200">Direct SMS Line: (720) 575-4061</p>
+        </div>
+        <button onclick="toggleChatWidget()" aria-label="Close Chat" class="text-white/80 hover:text-white text-sm cursor-pointer">✕</button>
+      </div>
+
+      <div id="chatWidgetBody" class="p-4 space-y-3">
+        <div class="bg-sand rounded-2xl p-3 text-xs text-espresso-950 leading-relaxed border border-champagne-500/20">
+          Hi there! 👋 Have a quick question about <strong>DAXXIFY®</strong>, per-unit pricing, or same-week openings in Lone Tree? Send us a note or tap below to text <strong>(720) 575-4061</strong> directly.
+        </div>
+        <form onsubmit="handleChatSubmit(event)" class="space-y-2.5">
+          <input
+            id="chatPhone"
+            type="tel"
+            required
+            placeholder="Your mobile number for SMS reply *"
+            class="w-full rounded-xl bg-white border border-champagne-500/30 px-3 py-2 text-xs text-espresso-950 focus:outline-none focus:border-champagne-500"
+          />
+          <textarea
+            id="chatMessage"
+            rows="2"
+            required
+            placeholder="Ask about Daxxify, Botox, pricing, or availability..."
+            class="w-full rounded-xl bg-white border border-champagne-500/30 px-3 py-2 text-xs text-espresso-950 focus:outline-none focus:border-champagne-500"
+          ></textarea>
+          <div class="flex gap-2">
+            <button
+              type="submit"
+              class="flex-1 bg-champagne-500 hover:bg-champagne-600 text-white font-semibold text-xs py-2.5 rounded-full transition cursor-pointer"
+            >
+              Send Quick Note
+            </button>
+            <a
+              href="sms:+17205754061"
+              class="px-3.5 py-2.5 rounded-full bg-espresso-900 text-white font-semibold text-xs hover:bg-espresso-800 transition text-center"
+            >
+              SMS App
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <div id="chatWidgetSuccess" class="hidden p-5 text-center space-y-2">
+        <p class="font-serif text-xl font-semibold text-espresso-950">Message Sent!</p>
+        <p class="text-xs text-taupe">Thank you! Our Lone Tree studio team will text you back shortly from (720) 575-4061.</p>
+        <button onclick="resetChatWidget()" class="text-xs font-semibold text-champagne-600 underline pt-1 cursor-pointer">Send another message</button>
+      </div>
+    </div>
+
+    <button
+      onclick="toggleChatWidget()"
+      aria-label="Open Quick Concierge Chat"
+      class="ml-auto flex items-center gap-2.5 bg-espresso-900 hover:bg-espresso-800 text-white px-4 py-3 rounded-full shadow-soft border border-champagne-500/40 transition cursor-pointer"
+    >
+      <span class="w-2.5 h-2.5 rounded-full bg-roseblush-400 animate-pulse"></span>
+      <span class="text-xs sm:text-sm font-semibold">Text Us • (720) 575-4061</span>
+    </button>
+  </div>
+
+  <!-- INTERACTIVE JAVASCRIPT ARCHITECTURE -->
+  <script>
+    // 1. Set Current Copyright Year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // 2. Top Header Scroll Progress Bar
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+      scrollProgressBar.style.transform = `scaleX(${progress})`;
+    }, { passive: true });
+
+    // 3. IntersectionObserver Scroll-Triggered Reveal Choreography
+    const revealElements = document.querySelectorAll('[data-reveal]');
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.getAttribute('data-delay') || 0;
+            setTimeout(() => {
+              entry.target.classList.add('is-visible');
+            }, Number(delay));
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      revealElements.forEach((el) => revealObserver.observe(el));
+    } else {
+      revealElements.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    // 4. All 5 FDA Neurotoxins Data Store
+    const TOXIN_DATA = {
+      daxxify: {
+        badge: '★ Featured Peptide Neuromodulator',
+        name: 'DAXXIFY®',
+        tagline: 'The first and only peptide-stabilized neurotoxin engineered for 6–9 month longevity.',
+        onset: '1–2 Days',
+        duration: '6–9 Months',
+        pricing: '$8–$9 / unit (2:1 peptide unit conversion)',
+        idealFor: 'Glabellar frown lines (11s), forehead lines, and crow’s feet for patients seeking fewer annual maintenance visits.',
+        highlights: [
+          'Peptide-powered stabilization—free of human serum albumin and animal byproducts',
+          'Rapid visible smoothing often begins within 24–48 hours',
+          'Up to 2x the longevity of conventional neuromodulators'
+        ],
+        bookingLabel: 'DAXXIFY® Featured Treatment'
+      },
+      botox: {
+        badge: 'Gold-Standard Classic',
+        name: 'BOTOX® Cosmetic',
+        tagline: 'Over two decades of proven clinical precision for balanced, expressive facial rejuvenation.',
+        onset: '3–7 Days',
+        duration: '3–4 Months',
+        pricing: '$13 / unit (VIP Members Save)',
+        idealFor: 'Forehead lines, 11s, crow’s feet, lip flips, brow lifts, masseter jaw tension, and platysmal neck bands.',
+        highlights: [
+          'Most extensively studied neuromodulator worldwide with predictable results',
+          'Versatile across upper-face expression lines and lower-face contouring',
+          'Eligible for Allē℠ loyalty rewards points at every Boost visit'
+        ],
+        bookingLabel: 'BOTOX® Cosmetic'
+      },
+      dysport: {
+        badge: 'Soft, Natural Diffusion',
+        name: 'Dysport®',
+        tagline: 'Fast-acting formulation with gentle diffusion ideal for broader forehead and glabellar zones.',
+        onset: '2–3 Days',
+        duration: '3–4 Months',
+        pricing: '$4.50 / unit (~$13.50 Botox-equiv.)',
+        idealFor: 'Broader forehead expanses and patients wanting rapid onset ahead of weddings, photos, or events.',
+        highlights: [
+          'Feather-soft diffusion blends smoothly across larger muscle groups',
+          'Visible softening commonly begins within 2–3 days',
+          'Preferred choice for active lifestyles and fast metabolizers'
+        ],
+        bookingLabel: 'Dysport®'
+      },
+      xeomin: {
+        badge: 'Purified “Smart Toxin”',
+        name: 'Xeomin®',
+        tagline: 'Uniquely double-filtered neuromodulator free of unnecessary complexing proteins.',
+        onset: '3–5 Days',
+        duration: '3–4 Months',
+        pricing: '$12 / unit',
+        idealFor: 'Patients seeking a clean, additive-free formulation or those who have built tolerance to other toxins.',
+        highlights: [
+          'Zero accessory proteins reduces risk of antibody resistance over time',
+          'Crisp, targeted precision for frown lines and periocular wrinkles',
+          'Ideal clean-label option for long-term maintenance'
+        ],
+        bookingLabel: 'Xeomin®'
+      },
+      jeuveau: {
+        badge: 'Modern Aesthetic Precision',
+        name: 'Jeuveau® (#NEWTOX)',
+        tagline: 'Dedicated exclusively to aesthetic medicine using proprietary Hi-Pure™ technology.',
+        onset: '2–5 Days',
+        duration: '3–4 Months',
+        pricing: '$12 / unit',
+        idealFor: 'Moderate-to-severe glabellar frown lines and preventative aesthetic smoothing.',
+        highlights: [
+          'Formulated solely for cosmetic facial aesthetics',
+          'Smooth, reliable onset within 2–5 days',
+          'Pairs with Evolus® Rewards instant patient savings'
+        ],
+        bookingLabel: 'Jeuveau®'
+      }
+    };
+
+    // Render Selected Toxin Panel with Smooth Crossfade
+    function selectToxin(key) {
+      const data = TOXIN_DATA[key];
+      if (!data) return;
+
+      document.querySelectorAll('.toxin-tab').forEach((btn) => {
+        const isSelected = btn.getAttribute('data-toxin') === key;
+        btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        if (isSelected) {
+          btn.className = 'toxin-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-300 cursor-pointer bg-espresso-900 text-white border-espresso-900 shadow-sm';
+        } else {
+          btn.className = 'toxin-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-300 cursor-pointer bg-white text-espresso-900 border-champagne-500/30 hover:border-champagne-500';
+        }
+      });
+
+      const card = document.getElementById('toxinDetailCard');
+      card.classList.remove('panel-animate');
+      void card.offsetWidth; // trigger reflow for smooth fade-in
+      card.classList.add('panel-animate');
+
+      card.innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-roseblush-100 border border-roseblush-200 text-espresso-900 text-xs font-bold uppercase tracking-wider">
+              ${data.badge}
+            </span>
+            <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-espresso-950">${data.name}</h3>
+            <p class="text-sm sm:text-base text-taupe leading-relaxed">${data.tagline}</p>
+            <div class="text-xs sm:text-sm text-espresso-950 bg-sand p-4 rounded-2xl border border-champagne-500/20">
+              <strong class="text-champagne-600 uppercase tracking-wider text-xs block mb-0.5">Ideal Treatment Areas</strong>
+              ${data.idealFor}
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-taupe pt-1">
+              ${data.highlights.map(item => `<li class="flex items-start gap-2.5"><span class="text-champagne-600 font-bold">✓</span><span>${item}</span></li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="lg:col-span-5 bg-ivory border border-champagne-500/25 rounded-2xl p-6 space-y-4">
+            <div class="grid grid-cols-2 gap-3 border-b border-champagne-500/20 pb-4">
+              <div>
+                <p class="text-[11px] uppercase tracking-wider text-taupe font-semibold">Onset Speed</p>
+                <p class="font-serif text-2xl font-semibold text-espresso-950 mt-0.5">${data.onset}</p>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-wider text-taupe font-semibold">Typical Longevity</p>
+                <p class="font-serif text-2xl font-semibold text-champagne-600 mt-0.5">${data.duration}</p>
+              </div>
+            </div>
+            <div>
+              <p class="text-[11px] uppercase tracking-wider text-taupe font-semibold">Transparent Clinic Pricing</p>
+              <p class="font-serif text-xl font-semibold text-espresso-950 mt-0.5">${data.pricing}</p>
+            </div>
+            <button
+              onclick="openBookingModal('${data.bookingLabel}')"
+              class="btn-shimmer w-full bg-champagne-500 hover:bg-champagne-600 text-white font-semibold text-sm py-3.5 px-5 rounded-full transition shadow-glow cursor-pointer"
+            >
+              Book ${data.name} Consultation &rarr;
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    selectToxin('daxxify');
+
+    // 5. Interactive FAQ Accordion Controller
+    function toggleFaq(buttonEl) {
+      const item = buttonEl.closest('.faq-item');
+      const isOpen = item.getAttribute('data-open') === 'true';
+      document.querySelectorAll('.faq-item').forEach((el) => el.setAttribute('data-open', 'false'));
+      if (!isOpen) {
+        item.setAttribute('data-open', 'true');
+      }
+    }
+
+    // 6. Mobile Navigation Drawer
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('mobileMenuBtn');
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', (!isHidden).toString());
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileMenu').classList.add('hidden');
+      document.getElementById('mobileMenuBtn').setAttribute('aria-expanded', 'false');
+    }
+
+    // 7. One-Click Consultation Modal
+    function openBookingModal(serviceLabel) {
+      const modal = document.getElementById('bookingModal');
+      const select = document.getElementById('bookingService');
+      const formWrapper = document.getElementById('bookingFormWrapper');
+      const confirmation = document.getElementById('bookingConfirmation');
+
+      formWrapper.classList.remove('hidden');
+      confirmation.classList.add('hidden');
+
+      if (serviceLabel) {
+        const keyword = serviceLabel.toLowerCase().split(' ')[0];
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value.toLowerCase().includes(keyword)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('patientName').value.trim();
+      const service = document.getElementById('bookingService').value;
+      const day = document.getElementById('preferredDay').value;
+      const time = document.getElementById('preferredTime').value;
+
+      document.getElementById('confirmationSummary').innerHTML =
+        `Thank you, <strong>${name}</strong>! Your consultation request for <strong>${service}</strong> (${day}, ${time}) has been sent to Shannon Asuchak, RN. Expect an SMS confirmation from <strong>(720) 575-4061</strong> shortly.`;
+
+      document.getElementById('bookingFormWrapper').classList.add('hidden');
+      document.getElementById('bookingConfirmation').classList.remove('hidden');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeBookingModal();
+    });
+    document.getElementById('bookingModal').addEventListener('click', (e) => {
+      if (e.target.id === 'bookingModal') closeBookingModal();
+    });
+
+    // 8. Floating SMS / Concierge Chat Widget
+    function toggleChatWidget() {
+      document.getElementById('chatWidgetBox').classList.toggle('hidden');
+    }
+
+    function handleChatSubmit(event) {
+      event.preventDefault();
+      document.getElementById('chatWidgetBody').classList.add('hidden');
+      document.getElementById('chatWidgetSuccess').classList.remove('hidden');
+    }
+
+    function resetChatWidget() {
+      document.getElementById('chatPhone').value = '';
+      document.getElementById('chatMessage').value = '';
+      document.getElementById('chatWidgetSuccess').classList.add('hidden');
+      document.getElementById('chatWidgetBody').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
